@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html ng-app="teste">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/testeCtrl.js"> </script>
+	<script src="js/controllers/filtroSoma.js"> </script>
+
+	<title>Teste JS</title>
+	<link rel="stylesheet" href="">
+</head>
+<body ng-controller="testeCtrl">
+
+	<div class="jumbotron barraPrincipal" ng-app="teste">
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+					<th>
+						Refrigerante
+					</th>
+					<th>
+						Quantidade
+					</th>
+					<th>
+						Valor Unitário
+					</th>
+					<th>
+						Subtotal
+					</th>
+				</tr>
+				<tr>
+					<td>
+								<!-- _______________SELECIONAR REFRIGERANTE______________ -->
+						<select class="logo form-control" ng-model="refrigeranteSelecionado_1" ng-options="refri as (refri.marca+' '+refri.quantidade) for refri in refrigerantes">
+						<option value=""><h4>Selecione o refrigerante </h4></option>
+						</select>
+					</td>
+
+
+								<!-- _______________VALOR UNITÁRIO______________ -->
+					<td><input class="form-control" type="number" min="1" placeholder="Informe a quantidade" ng-model="quantidade_1" ></td>
+					<td><h4> {{refrigeranteSelecionado_1.valor | currency:'R$' }}</h4>
+					</td>		
+
+
+
+								<!-- VALOR TOTAL DE REFRIGERANTES IGUAIS -->	
+					<td><h4 ng-model="valor_1"> {{quantidade_1 == null ? total_1 = refrigeranteSelecionado_1.valor : total_1 = quantidade_1*refrigeranteSelecionado_1.valor | currency:'R$'}}</h4></td>
+				</tr>
+
+
+
+								<!-- _______________SELECIONAR REFRIGERANTE______________ -->
+					<td>
+						<select class="logo form-control" ng-model="refrigeranteSelecionado_2" ng-options="refri as (refri.marca+' '+refri.quantidade) for refri in refrigerantes">
+							<option value=""><h4>Selecione o refrigerante</h4></option>
+						</select>
+					</td>
+
+
+								<!-- _______________VALOR UNITÁRIO______________ -->
+					<td><input class="form-control" type="number" min="1" placeholder="Informe a quantidade" ng-model="quantidade_2" ></td>
+					<td><h4> {{refrigeranteSelecionado_2.valor | currency:'R$' }}</h4>
+					</td>		
+
+
+
+
+								<!-- VALOR TOTAL DE REFRIGERANTES IGUAIS -->
+					<td><h4 ng-model="valor_2"> {{quantidade_2 == null ? total_2 = refrigeranteSelecionado_2.valor : total_2 = quantidade_2*refrigeranteSelecionado_2.valor | currency:'R$'}}</h4></td>
+				</tr>
+					
+
+				
+											<!-- _______________SELECIONAR REFRIGERANTE______________ -->
+					<td>
+					<select class="logo form-control" ng-model="refrigeranteSelecionado_3" ng-options="refri as (refri.marca+' '+refri.quantidade) for refri in refrigerantes">
+							<option value=""><h4>Selecione o refrigerante</h4></option>
+						</select>
+					</td>
+
+
+
+
+
+											<!-- _______________VALOR UNITÁRIO______________ -->
+					<td><input class="form-control" type="number" min="1" placeholder="Informe a quantidade" ng-model="quantidade_3" ></td>
+					<td><h4> {{refrigeranteSelecionado_3.valor | currency:'R$' }}</h4>
+					</td>
+
+
+
+
+											<!-- VALOR TOTAL DE REFRIGERANTES DA MESMA MARCA -->
+					<td><h4 ng-model="valor_3"> {{quantidade_3 == null ? total_3 = refrigeranteSelecionado_3.valor : total_3 = quantidade_3*refrigeranteSelecionado_3.valor | currency:'R$'}}</h4></td>
+				</tr>
+					<td>
+
+
+
+											<!-- _______________SELECIONAR REFRIGERANTE______________ -->
+						<select class="logo form-control" ng-model="refrigeranteSelecionado_4" ng-options="refri as (refri.marca+' '+refri.quantidade) for refri in refrigerantes">
+							<option value=""><h4>Selecione o refrigerante</h4></option>
+						</select>
+					</td>
+
+
+
+											<!-- _______________VALOR UNITÁRIO______________ -->
+					<td><input class="form-control" type="number" min="1" placeholder="Informe a quantidade" ng-model="quantidade_4" ></input></td>
+					<td><h4> {{refrigeranteSelecionado_4.valor | currency:'R$' }}</h4>
+					</td>
+
+
+
+
+											<!-- VALOR TOTAL DE REFRIGERANTES DA MESMA MARCA -->
+					<td><h4 ng-model="valor_4"> {{quantidade_4 == null ? total_4 = refrigeranteSelecionado_4.valor : total_4 = quantidade_4*refrigeranteSelecionado_4.valor | currency:'R$'}}</h4></td>
+				</tr>
+
+
+
+
+											<!-- _______________SELECIONAR REFRIGERANTE______________ -->
+					<td>
+						<select class="logo form-control" ng-model="refrigeranteSelecionado_5" ng-options="refri as (refri.marca+' '+refri.quantidade) for refri in refrigerantes">
+							<option value=""><h4>Selecione o refrigerante</h4></option>
+						</select>
+					</td>
+
+
+
+											<!-- _______________VALOR UNITÁRIO______________ -->
+					<td><input class="form-control" type="number" min="1" placeholder="Informe a quantidade" ng-model="quantidade_5" ></input></td>
+					<td><h4> {{refrigeranteSelecionado_5.valor | currency:'R$' }}</h4>
+					</td>		
+
+
+
+
+
+											<!-- VALOR TOTAL DE REFRIGERANTES DA MESMA MARCA -->
+					<td><h4 ng-model="valor_5"> {{quantidade_5 == null ? total_5 = refrigeranteSelecionado_5.valor : total_5 = quantidade_5*refrigeranteSelecionado_5.valor | currency:'R$'}}</h4></td>
+				</tr>
+				<tr></tr>
+				<td></td>
+				<td></td>
+				<td><h3> Valor total {{total_1 + total_2 + total_3 + total_4 + total_5 | currency:'R$' }} </h3></td>
+			</table>	
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+<!-- <select class="form-control" ng-model="distribuidoras" ng-options="distribuidora.nome for distribuidora in data">
+			<option value="">Selecione a marca</option>
+		</select> 
+		{{va = quantidade*refrigerante.preco | currency:'R$'}}-->
